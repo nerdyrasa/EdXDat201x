@@ -40,6 +40,12 @@ WHERE ca.CustomerID IS NULL;
 -- Just exploratory queries.
 select * from saleslt.customer;
 select * from saleslt.customeraddress;
+select distinct addresstype from saleslt.customeraddress order by AddressType;
+
+-- how many main office addresses
+-- how many shipping addresses
+select count (addresstype) from saleslt.customeraddress where addresstype = 'Main Office';
+select count (addresstype) from saleslt.customeraddress where addresstype = 'Shipping';
 
 -- 2-3. Retrieve a list of customers and products without orders.
 -- A list of customers without orders
