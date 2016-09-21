@@ -29,3 +29,26 @@ WHERE p.ListPrice > 1000
 GROUP BY p.Name
 HAVING SUM(LineTotal) > 20000
 ORDER BY TotalRevenue DESC;
+
+
+-- extra
+
+--
+
+SELECT COUNT(ProductID) AS ProductIDCount, COUNT(OrderQty) AS QuantityCount, SUM(UnitPrice) AS PriceSum
+FROM SalesLT.SalesOrderDetail;
+
+SELECT PRODUCTID, ORDERQTY, UNITPRICE FROM SALESLT.SalesOrderDetail;
+
+--
+SELECT COUNT(CustomerID) AS CustomerCount, City AS CustomerCity, State AS CustomerState
+FROM Sales.Customer
+
+
+select count(addressid) AS AddressCount, city AS CustomerCity, stateprovince AS CustomerState
+from saleslt.address
+group by city, stateprovince;
+
+select count(addressid), city, stateprovince
+from saleslt.address
+group by stateprovince, city;
