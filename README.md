@@ -6,7 +6,11 @@
 - [x] LAB 4 : USING SET OPERATORS
 - [X] LAB 5 : USING FUNCTIONS AND AGGREGATING DATA
 - [X] LAB 6 : USING SUBQUERIES AND APPLY
-- [ ] LAB 7 : USING TABLE EXPRESSIONS
+- [X] LAB 7 : USING TABLE EXPRESSIONS
+    1. Derived tables
+    2. Common table expressions (CTEs)
+    3. Views
+    4. Inline table-valued function (inline TVFs)
 - [ ] LAB 8 : GROUPING SETS AND PIVOTING DATA
 - [ ] LAB 9 : MODIFYING DATA
 - [ ] LAB 10: PROGRAMMING WITH TRANSACT-SQL
