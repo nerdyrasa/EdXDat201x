@@ -67,3 +67,18 @@ A Cycle Shop
 ...
 
 */
+
+-- First try; not pivoting but getting the info
+
+SELECT c.CompanyName, cat.ParentProductCategoryName, SUM(od.UnitPrice) AS Revenue
+FROM SalesLT.Customer AS c
+JOIN SalesLT.SalesOrderHeader AS oh
+ON c.CustomerID = oh.CustomerID
+JOIN SalesLT.SalesOrderDetail AS od
+ON oh.SalesOrderID = od.SalesOrderID
+JOIN SalesLT.Product AS p
+ON od.ProductID = p.ProductID
+JOIN SalesLT.vGetAllCategories AS cat
+ON p.ProductCategoryID = cat.ProductCategoryID 
+GROUP BY c.CompanyName, cat.ParentProductCategoryName
+ORDER BY c.CompanyName, cat.ParentProductCategoryName;
