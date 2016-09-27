@@ -79,3 +79,21 @@ JOIN SalesLT.Product AS p ON od.ProductID = p.ProductID
 JOIN SalesLT.vGetAllCategories AS cat ON p.ProductCategoryID = cat.ProductCategoryID 
 GROUP BY c.CompanyName, cat.ParentProductCategoryName
 ORDER BY c.CompanyName, cat.ParentProductCategoryName;
+
+-- Now Pivot
+
+SELECT * FROM 
+( SELECT cat.ParentProductCategoryName, c.CompanyName, od.LineTotal 
+FROM SalesLT.Customer AS c
+JOIN SalesLT.SalesOrderHeader AS oh
+ON c.CustomerID = oh.CustomerID
+JOIN SalesLT.SalesOrderDetail AS od ON oh.SalesOrderID = od.SalesOrderID
+JOIN SalesLT.Product AS p ON od.ProductID = p.ProductID
+JOIN SalesLT.vGetAllCategories AS cat ON p.ProductCategoryID = cat.ProductCategoryID) AS SourceTable
+PIVOT
+(
+SUM(LineTotal)
+FOR ParentProductCategoryName IN ([Accessories],[Bikes],[Clothing],[Components])
+) AS PivotSalesTable
+ORDER BY CompanyName;
+ 
