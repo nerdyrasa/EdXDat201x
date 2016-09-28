@@ -13,5 +13,8 @@
     4. Inline table-valued function (inline TVFs)
 - [ ] LAB 8 : GROUPING SETS AND PIVOTING DATA
 - [ ] LAB 9 : MODIFYING DATA
+    1. IDENT_CURRENT('saleslt.product')  (NOTE: May be issues with IDENT_CURRENT)
 - [ ] LAB 10: PROGRAMMING WITH TRANSACT-SQL
+    1. SET @OrderID = NEXT VALUE FOR SalesLT.SalesOrderNumber
+    2. DATEADD(dd, 7, GETDATE())
 - [ ] LAB 11: ERROR HANDLING AND TRANSACTIONS
