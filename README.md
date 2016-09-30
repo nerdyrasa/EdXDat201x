@@ -15,8 +15,8 @@
 - [ ] LAB 9 : MODIFYING DATA
     1. IDENT_CURRENT('saleslt.product')  (NOTE: May be issues with IDENT_CURRENT)
 - [ ] LAB 10: PROGRAMMING WITH TRANSACT-SQL
-    1. SET @OrderID = NEXT VALUE FOR SalesLT.SalesOrderNumber when working with sequences
-    2. When using identity column use SET @OrderID = IDENT_CURRENT('table_name')--maybe there's a better way?
-    2. Must declare variables to use them: DECLARE @OrderDate datetime = GETDATE();
-    3. DATEADD(dd, 7, GETDATE())
+    1. When working with azure database, I was able to use SET @OrderID = NEXT VALUE FOR SalesLT.SalesOrderNumber. The sequence shows up under the programmability folder.
+    2. When working with my local db, I had to use SET @OrderID = IDENT_CURRENT('table_name') since there was no sequence in my programmability folder.
+    3. Must declare variables to use them: DECLARE @OrderDate datetime = GETDATE();
+    4. DATEADD(dd, 7, GETDATE())
 - [ ] LAB 11: ERROR HANDLING AND TRANSACTIONS
